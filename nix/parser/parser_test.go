@@ -5,6 +5,7 @@ import (
 
 	"github.com/alecthomas/assert"
 	"github.com/orivej/e"
+	"github.com/orivej/go-nix/nix/util"
 )
 
 func TestParseOne(t *testing.T) {
@@ -17,8 +18,8 @@ func TestParseAll(t *testing.T) {
 	if testing.Short() {
 		t.SkipNow()
 	}
-	err := walkNix(nixpkgs, func(path string) error {
-		_, err := parseFile(path)
+	err := util.WalkNix(nixpkgs, func(path string) error {
+		_, err := ParseFile(path)
 		assert.NoError(t, err, path)
 		return nil
 	})

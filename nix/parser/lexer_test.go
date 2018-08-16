@@ -7,6 +7,7 @@ import (
 
 	"github.com/alecthomas/assert"
 	"github.com/orivej/e"
+	"github.com/orivej/go-nix/nix/util"
 )
 
 func TestLexOne(t *testing.T) {
@@ -25,7 +26,7 @@ func TestLexAll(t *testing.T) {
 		t.SkipNow()
 	}
 	hist := map[int]int{}
-	err := walkNix(nixpkgs, func(path string) error {
+	err := util.WalkNix(nixpkgs, func(path string) error {
 		r, err := lexFile(path)
 		assert.NoError(t, err, path)
 		for _, tok := range r.tokens {
