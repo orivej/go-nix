@@ -14,9 +14,9 @@ var (
 	prof    = kingpin.Flag("profile", "Profile performance.").Bool()
 )
 
-func register(name, help string, f func()) (*kingpin.CmdClause, func()) {
+func register(name string, f func()) func() {
 	actions[name] = f
-	return kingpin.Command(name, help), f
+	return f
 }
 
 func main() {
