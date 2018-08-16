@@ -18,11 +18,14 @@ func TestParseAll(t *testing.T) {
 	if testing.Short() {
 		t.SkipNow()
 	}
+	cnt := 0
 	err := util.WalkNix(nixpkgs, func(path string) error {
 		_, err := ParseFile(path)
 		assert.NoError(t, err, path)
+		cnt++
 		return nil
 	})
+	t.Logf("parsed %d files", cnt)
 	assert.NoError(t, err)
 }
 
