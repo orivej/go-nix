@@ -12,11 +12,13 @@ const storeDir = "/nix/store"
 var rxStoreName = regexp.MustCompile(`^[A-Za-z0-9+._?=-]+$`)
 
 // StorePath returns nix store path of the pathname.
-func StorePath(pathname string) string {
-	name := path.Base(pathname)
-	checkStoreName(name)
+func StorePath(pathname, basename string) string {
+	if basename == "" {
+		basename = path.Base(pathname)
+	}
+	checkStoreName(basename)
 	h := Path(pathname)
-	return fixedOutputPath(true, h, name)
+	return fixedOutputPath(true, h, basename)
 }
 
 func fixedOutputPath(recursive bool, contentHash Hash, name string) string {
