@@ -110,7 +110,7 @@ func parse(lr *lexResult) (p *Parser, err error) {
 	return
 }
 
-func parseFile(path string) (p *Parser, err error) {
+func ParseFile(path string) (p *Parser, err error) {
 	lr, err := lexFile(path)
 	if err != nil {
 		return
