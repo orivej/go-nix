@@ -10,27 +10,25 @@ This repository contains:
 # How to build
 
 ```console
-$ nix-shell
-$ go build ./...
-```
-
-Optionally regenerate parser & lexer (if modified)
-
-```console
-$ go generate ./...
+$ nix-build
 ```
 
 # Build cmd/gon
 
 ```console
-$ (cd cmd/gon && go build .)
-$ ./cmd/gon/gon help
+$ result-bin/bin/gon help
+```
+
+# Get a development environment
+
+```console
+$ nix-shell
+$ go build ./...
 ```
 
 # Run tests
 
 ```console
-# run tests
 $ go test ./...
 ```
 

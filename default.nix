@@ -15,11 +15,13 @@ let
       sha256 = "0xa340bz8r3s88k91dldags32f3js8gqmcjsrsrn0p514kiacjsn";
     };
   };
-in stdenv.mkDerivation {
-  name = "env";
+in buildGoPackage {
+  name = "go-nix";
+  goPackagePath = "github.com/orivej/go-nix";
+  src = ./.;
+  # generated with https://github.com/adisbladis/vgo2nix
+  goDeps = ./deps.nix;
   buildInputs = [
-    bashInteractive
-    go
     ragel
     goyacc
   ];
