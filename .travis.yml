@@ -1,0 +1,4 @@
+language: nix
+script:
+  # buildGoPackage disables GOCACHE at the moment, which we need to build our stuff
+  - nix-shell --command "GOCACHE=$(mktemp -d) go test ./..."
