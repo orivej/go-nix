@@ -7,6 +7,33 @@ This repository contains:
 - `nix/eval` - an incomplete Nix evaluator. It can't evaluate realistic Nix files, but it's a start.
 - `cmd/gon` - an utility that exposes these libraries from the command line.
 
+# Development
+
+## How to build
+
+```sh
+$ nix-build
+```
+
+## Build cmd/gon
+
+```sh
+$ result-bin/bin/gon help
+```
+
+## Get a development environment
+
+```sh
+$ nix-shell
+$ go build ./...
+```
+
+## Run tests
+
+```sh
+$ go test ./...
+```
+
 # Credits
 
 - [ragel](https://www.colm.net/open-source/ragel/) generates the Nix lexer
