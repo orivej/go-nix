@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/orivej/go-nix.svg?branch=master)](https://travis-ci.com/orivej/go-nix)
+[![Build Status](https://travis-ci.org/orivej/go-nix.svg?branch=master)](https://travis-ci.org/orivej/go-nix)
 
 # Overview
 
