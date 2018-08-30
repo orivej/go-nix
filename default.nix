@@ -27,6 +27,8 @@ in buildGoPackage rec {
   ];
   doCheck = true;
   checkPhase = ''
-    (cd $NIX_BUILD_TOP/go/src/${goPackagePath} && go test ./...)
+    NIX_PATH=nixpkgs=${lib.cleanSource path} \
+    GOPATH=$NIX_BUILD_TOP/go \
+    go test -v ${goPackagePath}/...
   '';
 }

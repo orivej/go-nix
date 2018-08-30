@@ -1,6 +1,6 @@
-# Overview
-
 [![Build Status](https://travis-ci.com/orivej/go-nix.svg?branch=master)](https://travis-ci.com/orivej/go-nix)
+
+# Overview
 
 This repository contains:
 
