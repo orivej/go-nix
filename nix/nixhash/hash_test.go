@@ -20,5 +20,5 @@ func TestHash(t *testing.T) {
 	e.Panic(err)
 
 	assert.Equal(t, "/nix/store/a68bcimav7hwazsfk1iiabv7fxyr3dh4-name",
-		StorePath(file))
+		StorePath(file, ""))
 }
