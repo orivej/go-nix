@@ -7,28 +7,30 @@ This repository contains:
 - `nix/eval` - an incomplete Nix evaluator. It can't evaluate realistic Nix files, but it's a start.
 - `cmd/gon` - an utility that exposes these libraries from the command line.
 
-# How to build
+# Development
 
-```console
+## How to build
+
+```sh
 $ nix-build
 ```
 
-# Build cmd/gon
+## Build cmd/gon
 
-```console
+```sh
 $ result-bin/bin/gon help
 ```
 
-# Get a development environment
+## Get a development environment
 
-```console
+```sh
 $ nix-shell
 $ go build ./...
 ```
 
-# Run tests
+## Run tests
 
-```console
+```sh
 $ go test ./...
 ```
 
