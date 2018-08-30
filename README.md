@@ -1,5 +1,7 @@
 # Overview
 
+[![Build Status](https://travis-ci.com/orivej/go-nix.svg?branch=master)](https://travis-ci.com/orivej/go-nix)
+
 This repository contains:
 
 - `nix/parser` - a Nix parser. Optimized for speed, it parses all Nixpkgs in 2 seconds. It preserves comments and source positions and can be used to implement Nix files formatting.

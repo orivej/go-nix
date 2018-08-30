@@ -15,7 +15,7 @@ let
       sha256 = "0xa340bz8r3s88k91dldags32f3js8gqmcjsrsrn0p514kiacjsn";
     };
   };
-in buildGoPackage {
+in buildGoPackage rec {
   name = "go-nix";
   goPackagePath = "github.com/orivej/go-nix";
   src = ./.;
@@ -25,4 +25,8 @@ in buildGoPackage {
     ragel
     goyacc
   ];
+  doCheck = true;
+  checkPhase = ''
+    (cd $NIX_BUILD_TOP/go/src/${goPackagePath} && go test ./...)
+  '';
 }
