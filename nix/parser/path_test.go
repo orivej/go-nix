@@ -10,8 +10,15 @@ var allPackages = ResolvePath("nixpkgs/pkgs/top-level/all-packages.nix")
 var nixpkgs = ResolvePath("nixpkgs")
 var attrsets = ResolvePath("nixpkgs/lib/attrsets.nix")
 
+func skipWithoutNixPath(t *testing.T) {
+	if len(NixPath) == 0 {
+		t.Skip("NIX_PATH is not set")
+	}
+}
+
 func TestSplitNixPath(t *testing.T) {
 	tests := map[string][][2]string{
+		"":          nil,
 		"a":         {{"", "a"}},
 		"a:b:c":     {{"", "a"}, {"", "b"}, {"", "c"}},
 		"p=b":       {{"p", "b"}},

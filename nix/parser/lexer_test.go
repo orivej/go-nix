@@ -11,6 +11,7 @@ import (
 )
 
 func TestLexOne(t *testing.T) {
+	skipWithoutNixPath(t)
 	path := attrsets
 	data, err := ioutil.ReadFile(path)
 	e.Exit(err)
@@ -25,6 +26,7 @@ func TestLexAll(t *testing.T) {
 	if testing.Short() {
 		t.SkipNow()
 	}
+	skipWithoutNixPath(t)
 	hist := map[int]int{}
 	err := util.WalkNix(nixpkgs, func(path string) error {
 		r, err := lexFile(path)

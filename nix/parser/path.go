@@ -13,6 +13,9 @@ func ResolvePath(s string) string {
 }
 
 func splitNixPath(s string) [][2]string {
+	if s == "" {
+		return nil
+	}
 	parts := strings.Split(s, ":")
 	entries := make([][2]string, len(parts))
 	for i, part := range parts {

@@ -18,6 +18,7 @@ func TestParseAll(t *testing.T) {
 	if testing.Short() {
 		t.SkipNow()
 	}
+	skipWithoutNixPath(t)
 	cnt := 0
 	err := util.WalkNix(nixpkgs, func(path string) error {
 		_, err := ParseFile(path)
